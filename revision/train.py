@@ -10,7 +10,7 @@ from torch import nn
 from torch.utils.data import DataLoader
 from data import CandidateDataset,read_manifest,sha256
 from metrics import binary_metrics,validation_threshold
-from models import Classifier
+from models import Classifier,validate_input_shape
 
 
 def write_json(path,value):
@@ -111,6 +111,7 @@ def main():
     parser.add_argument('--seeds',nargs='+',type=int,default=[42,123,456,789,1024])
     args=parser.parse_args()
     cfg=json.loads(Path(args.config).read_text(encoding='utf-8'))
+    validate_input_shape(cfg)
     for key in ('batch_size','accumulation_steps','epochs','min_epochs','patience'):
         if not isinstance(cfg[key],int) or cfg[key]<1: raise ValueError(f'{key} must be a positive integer.')
     if cfg.get('gradient_checkpointing') or cfg.get('augmentation')!='none' or cfg.get('normalization')!='none':

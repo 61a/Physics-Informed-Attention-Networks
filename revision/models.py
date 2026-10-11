@@ -6,6 +6,13 @@ from torch.nn import functional as F
 from physics import delays_in_samples
 
 
+def validate_input_shape(cfg):
+    shape=cfg.get('input_shape')
+    if not isinstance(shape,(list,tuple)) or len(shape)!=3 or any(type(v) is not int or v<1 for v in shape):
+        raise ValueError('Set input_shape=[C,T,F] to the measured channel/time/frequency dimensions of the prepared arrays.')
+    return tuple(shape)
+
+
 class DispersionBank(nn.Module):
     def __init__(self, frequencies_ghz, dm_values, sampling_ms, time):
         super().__init__()
@@ -28,7 +35,8 @@ class DispersionBank(nn.Module):
             for delay in self.delays:
                 phase = torch.exp(2j*math.pi*cycles[:,None]*delay[None,:])
                 aligned = torch.fft.irfft(spectrum*phase[None,None,:,:], n=length, dim=2)
-                bank.append(aligned[:,:,self.guard:self.guard+time,:])
+                # Store the cropped window, without retaining each padded FFT output.
+                bank.append(aligned[:,:,self.guard:self.guard+time,:].clone())
             return torch.stack(bank, dim=1)
 
 
@@ -127,7 +135,7 @@ class Classifier(nn.Module):
         super().__init__()
         if front_end not in {'raw','uniform','learned'}:
             raise ValueError('front_end must be raw, uniform, or learned.')
-        self.shape=tuple(cfg['input_shape']); self.front_end=front_end
+        self.shape=validate_input_shape(cfg); self.front_end=front_end
         if front_end!='raw':
             if cfg.get('frequencies_ghz') is None or cfg.get('dm_values') is None:
                 raise ValueError('Fill actual frequencies_ghz and dm_values in the configuration.')

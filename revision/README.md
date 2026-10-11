@@ -12,11 +12,11 @@ python -m pip install -r requirements.txt
 
 ## Input data
 
-Prepare each `.npy` file as a finite detected-intensity array with axes **channel, time, frequency**. The default configuration uses shape `(2, 60, 1024)`. The loader checks each array against `input_shape` in the configuration and preserves the time and frequency coordinates.
+Prepare each `.npy` file as a finite detected-intensity array with axes **channel, time, frequency**. Set `input_shape` to the actual dimensions of the prepared arrays. The published FAST-FREX products provide one intensity channel, so their direct representation uses `(1, T, F)`. Keep the full time axis when decoding the sub-integrations: the number of time samples is `NAXIS2 × NSBLK`, rather than `NAXIS2` alone. Record any subsequent cropping or time/frequency averaging in the preprocessing configuration. The loader checks every array against the supplied dimensions.
 
 Create a CSV manifest with columns `path,label,split`, where label is `0` or `1` and split is `train`, `val`, or `test`. Paths can be relative to the manifest directory or absolute. The manifest fixes the sample assignments for all training seeds and comparison models. Include observing-session identifiers in the optional `group` column to retain each session in one partition; the loader checks file uniqueness and group assignments.
 
-Copy `configs/protocol.json` to create the experiment configuration. Supply `frequencies_ghz` in channel order, `sampling_ms` in milliseconds, and the trial values in `dm_values`, using the coordinates of the arrays after preprocessing. For windows dedispersed at a known reference DM, use a residual-DM grid. Keep the frequency coordinates in the same order as the data channels.
+Copy `configs/protocol.json` to create the experiment configuration. Fill `input_shape`, `frequencies_ghz`, `sampling_ms`, and `dm_values` using the prepared arrays and their recorded coordinates. Read channel frequencies from `DAT_FREQ` and the original sampling interval from `TBIN`. Update the time interval and channel centres after averaging. For windows dedispersed at a known reference DM, use a residual-DM grid. Keep the frequency coordinates in the same order as the data channels.
 
 Alignment follows the cold-plasma delay law in GHz and milliseconds, converted to samples using `sampling_ms`. A positive Fourier phase advances delayed low-frequency channels, and zero padding handles the finite-window boundaries. Choose a window length that covers the largest displacement in the trial grid. This layer processes detected-intensity dynamic spectra.
 
@@ -31,6 +31,8 @@ Alignment follows the cold-plasma delay law in GHz and milliseconds, converted t
 | Full model | Dispersion bank with learned DM attention | Conformer |
 
 The full-model versus Variant A comparison evaluates the combined front-end. Full-model versus Variant B evaluates learned attention relative to uniform fusion.
+
+For ViT-Small, the input-channel projection follows `C` in the recorded shape. Right padding to multiples of 16 gives a `ceil(T/16) × ceil(F/16)` patch grid, followed by one classification token. Positional embeddings and encoder weights are initialized from scratch. Select the windowing and averaging before training and use the same representation for all comparisons. Record the resulting time resolution and pulse support as part of that choice.
 
 ## Experiments
 

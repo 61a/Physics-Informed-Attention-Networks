@@ -65,6 +65,27 @@ class ManifestTests(unittest.TestCase):
 
 @unittest.skipUnless(importlib.util.find_spec('torch'), 'PyTorch runtime required')
 class TorchTests(unittest.TestCase):
+    def test_bank_crops_release_padded_storage(self):
+        import torch
+        from unittest.mock import patch
+        from models import DispersionBank
+        stack=torch.stack
+        def checked_stack(windows,**kwargs):
+            for window in windows:
+                self.assertEqual(window.untyped_storage().nbytes(),window.numel()*window.element_size())
+            return stack(windows,**kwargs)
+        layer=DispersionBank([1.,1.4],[0.,1.],1.,16)
+        with patch('models.torch.stack',side_effect=checked_stack):
+            output=layer(torch.randn(1,1,16,2))
+        self.assertEqual(tuple(output.shape),(1,2,1,16,2))
+
+    def test_input_shape_is_explicit(self):
+        from models import validate_input_shape
+        for shape in (None,[1,0,1024],[True,60,1024],[1,60]):
+            with self.assertRaisesRegex(ValueError,'input_shape'):
+                validate_input_shape({'input_shape':shape})
+        self.assertEqual(validate_input_shape({'input_shape':[1,256,1024]}),(1,256,1024))
+
     def test_distinct_baseline_encoders(self):
         import torch
         from models import Classifier

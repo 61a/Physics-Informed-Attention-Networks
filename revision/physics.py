@@ -36,5 +36,5 @@ def align_numpy(x, delays):
     for delay in delays:
         phase = np.exp(2j*np.pi*cycles[:,None]*delay[None,:])
         shifted = np.fft.irfft(spectrum*phase[None,None,:,:], n=n, axis=2)
-        bank.append(shifted[:,:,guard:guard+time,:])
+        bank.append(shifted[:,:,guard:guard+time,:].copy())
     return np.stack(bank,axis=1)

@@ -1,5 +1,5 @@
 {
-  "input_shape": [2, 60, 1024],
+  "input_shape": null,
   "frequencies_ghz": null,
   "sampling_ms": null,
   "dm_values": null,
