@@ -18,6 +18,8 @@ Create a CSV manifest with columns `path,label,split`, where label is `0` or `1`
 
 Copy `configs/protocol.json` to create the experiment configuration. Fill `input_shape`, `frequencies_ghz`, `sampling_ms`, and `dm_values` using the prepared arrays and their recorded coordinates. Read channel frequencies from `DAT_FREQ` and the original sampling interval from `TBIN`. Update the time interval and channel centres after averaging. For windows dedispersed at a known reference DM, use a residual-DM grid. Keep the frequency coordinates in the same order as the data channels.
 
+Each run uses a common time-frequency grid. Resample files with different native sampling intervals onto that grid and use a common physical window duration before combining them in one experiment. Fix the preparation rule independently of class labels and record the resulting resolution.
+
 Alignment follows the cold-plasma delay law in GHz and milliseconds, converted to samples using `sampling_ms`. A positive Fourier phase advances delayed low-frequency channels, and zero padding handles the finite-window boundaries. Choose a window length that covers the largest displacement in the trial grid. This layer processes detected-intensity dynamic spectra.
 
 ## Comparison settings
