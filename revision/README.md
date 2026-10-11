@@ -1,6 +1,6 @@
 # Physics-Informed Attention Networks
 
-Reference implementation for dispersion-guided classification of fast radio burst candidate windows. The network combines a cold-plasma alignment bank, learned fusion over dispersion hypotheses, and a Conformer encoder. Raw-input baselines, alternative encoders with the shared front-end, and two component ablations use the same evaluation interface.
+We implement a dispersion-guided network for fast radio burst candidate classification. A cold-plasma alignment bank represents the input under multiple DM hypotheses, learned attention combines these representations, and a Conformer encoder processes the resulting temporal features. The experiment interface supports complete-model comparisons, encoder substitutions, and component ablations.
 
 ## Installation
 
@@ -12,13 +12,25 @@ python -m pip install -r requirements.txt
 
 ## Input data
 
-Each `.npy` file must contain a finite intensity array of shape `(2, 60, 1024)`, with axes **channel, time, frequency**. The loader preserves these axes and rejects files with a different shape. Data are supplied separately by the researcher.
+Prepare each `.npy` file as a finite detected-intensity array with axes **channel, time, frequency**. The default configuration uses shape `(2, 60, 1024)`. The loader checks each array against `input_shape` in the configuration and preserves the time and frequency coordinates.
 
-Create a CSV manifest with columns `path,label,split`, where label is `0` or `1` and split is `train`, `val`, or `test`. Paths are relative to the manifest directory, or absolute. A sample may occur in only one split. Supply an existing observation-independent split when one is available; the optional `group` column records observing-session identifiers and is checked for cross-split overlap. A sample-level split establishes filename separation, rather than observing-session independence.
+Create a CSV manifest with columns `path,label,split`, where label is `0` or `1` and split is `train`, `val`, or `test`. Paths can be relative to the manifest directory or absolute. The manifest fixes the sample assignments for all training seeds and comparison models. Include observing-session identifiers in the optional `group` column to retain each session in one partition; the loader checks file uniqueness and group assignments.
 
-Create a JSON configuration from `configs/protocol.json`. Add the actual ordered channel frequencies in GHz, the time sampling interval in milliseconds, and the dispersion grid used for the input. These quantities must describe the supplied arrays after preprocessing. For windows already dedispersed at a known reference DM, the grid describes residual DM. Frequency reversal must also reverse the frequency coordinates.
+Copy `configs/protocol.json` to create the experiment configuration. Supply `frequencies_ghz` in channel order, `sampling_ms` in milliseconds, and the trial values in `dm_values`, using the coordinates of the arrays after preprocessing. For windows dedispersed at a known reference DM, use a residual-DM grid. Keep the frequency coordinates in the same order as the data channels.
 
-The Fourier transform uses a positive phase to advance delayed low-frequency channels. Zero padding prevents circular wraparound. The implementation requires the maximum trial displacement to be shorter than the input window; provide windows with adequate support for the chosen grid. This operation acts on detected intensity, rather than telescope voltages.
+Alignment follows the cold-plasma delay law in GHz and milliseconds, converted to samples using `sampling_ms`. A positive Fourier phase advances delayed low-frequency channels, and zero padding handles the finite-window boundaries. Choose a window length that covers the largest displacement in the trial grid. This layer processes detected-intensity dynamic spectra.
+
+## Comparison settings
+
+| Setting | Input pathway | Encoder |
+|---|---|---|
+| Raw-input comparison | Dynamic spectrum directly to the encoder; full model uses the learned front-end | CNN, ViT, or Conformer |
+| Backbone comparison | Shared dispersion bank and learned DM attention | Alternative encoders |
+| Variant A | Dynamic spectrum directly to the encoder | Conformer |
+| Variant B | Dispersion bank with uniform fusion | Conformer |
+| Full model | Dispersion bank with learned DM attention | Conformer |
+
+The full-model versus Variant A comparison evaluates the combined front-end. Full-model versus Variant B evaluates learned attention relative to uniform fusion.
 
 ## Experiments
 
@@ -39,11 +51,13 @@ python benchmark.py --checkpoint runs/full/seed_42/checkpoint.pt --output runs/f
 python summarize.py --runs runs/full --output runs/full/summary.json
 ```
 
-Timing uses the complete GPU-resident forward pass, batch size one, FP32, 50 warm-up iterations and 200 timed repetitions. CUDA is synchronized before and after each timing interval. File I/O, host preprocessing, and transfer to the GPU are excluded. Parameter counts refer to the complete instantiated model.
+Timing covers the complete GPU-resident forward pass: dispersion/FFT operations, fusion, encoding, and classification. The protocol uses batch size one, FP32, 50 warm-up iterations, and 200 timed repetitions, with CUDA synchronization before and after each interval. This forward-pass measurement starts with the input tensor on the GPU; file reading, host preprocessing, and host-to-device transfer are outside its timing boundary. Parameter counts include all trainable modules in the instantiated model.
 
-## Results and versioning
+## Experiment outputs
 
-The run outputs, rather than example percentages, are the source of manuscript tables. This source package does not include new observational performance results or trained checkpoints. Each run records SHA-256 hashes of the configuration, source files, manifest, input arrays, and checkpoint. An accompanying experiment index should associate each manuscript table row with the corresponding run directory and published version.
+Each seed produces `checkpoint.pt`, `training_log.json`, `validation_predictions.csv`, `test_predictions.csv`, and `result.json`. The prediction files retain sample identifiers, labels, probabilities, decisions, and the selected threshold. `result.json` records the confusion-matrix counts, classification metrics, model configuration, and SHA-256 identifiers for the source, manifest, input arrays, and checkpoint.
+
+`summarize.py` checks the prediction records against the run metadata, recalculates the metrics, and reports the mean and sample standard deviation across seeds. Associate each comparison row with its run directory and repository commit when preparing the experimental tables.
 
 ## Checks
 
@@ -51,4 +65,4 @@ The run outputs, rather than example percentages, are the source of manuscript t
 python -m unittest discover -s tests -v
 ```
 
-Tests check the dispersion units and alignment sign, suppression of wraparound, integer metric counts, validation-threshold selection, physical-layer gradients, and the model output pathway. Observational training and GPU benchmarking require the supplied dataset and a compatible runtime.
+The checks cover dispersion units and alignment direction, window-boundary handling, confusion-matrix arithmetic, validation-threshold selection, physical-layer gradients, Conformer pathways, and the five baseline encoders. Use the data manifest for observational experiments and a CUDA device for the stated inference benchmark.

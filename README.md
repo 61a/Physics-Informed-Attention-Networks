@@ -1,9 +1,9 @@
 # Physics-Informed Attention Networks
 
-Dispersion-guided classification of fast radio burst candidate windows using a physical alignment bank, learned DM fusion, and a Conformer encoder.
+We provide the implementation of our dispersion-guided network for fast radio burst candidate classification. The model combines a cold-plasma alignment bank, learned fusion over dispersion-measure (DM) hypotheses, and a Conformer encoder.
 
-The [reference implementation](revision/README.md) includes training, raw-input and shared-front-end encoder comparisons, component ablations, prediction-based evaluation, and complete-model inference benchmarking.
+The [code and experiment guide](revision/README.md) covers model training, baseline and backbone comparisons, component ablations, classification evaluation, and complete-model inference benchmarking. The three comparison settings use explicit module definitions and a shared evaluation interface.
 
-See [installation and experiment commands](revision/README.md) and the [configuration template](revision/configs/protocol.json). Channel frequencies, time sampling, and the dispersion grid are supplied from the observational data. Run outputs provide the metrics used in manuscript tables.
+Start with the [installation and experiment commands](revision/README.md) and the [configuration template](revision/configs/protocol.json). Set the channel frequencies, sampling interval, and DM grid to match the dynamic spectra used in the experiment.
 
-The repository contains source code and automated checks. Observational data, trained checkpoints, and new experimental results are distributed separately when available.
+Each training run saves its configuration, checkpoint, validation and test predictions, and confusion-matrix counts. The supplied summary script calculates run-level metrics and statistics across training seeds. [Automated checks](.github/workflows/revision-tests.yml) cover physical alignment, model pathways, and evaluation calculations.
