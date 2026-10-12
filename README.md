@@ -1,15 +1,24 @@
 # Physics-Informed Attention Networks
 
-We provide the implementation of our dispersion-guided network for fast radio burst candidate classification. The model combines a cold-plasma alignment bank, learned fusion over dispersion-measure (DM) hypotheses, and a Conformer encoder.
+We provide code and experimental records for our dispersion-guided fast radio burst candidate classifier. The model combines a cold-plasma alignment bank, learned fusion over dispersion-measure hypotheses, and a Conformer encoder.
 
-The [code and experiment guide](revision/README.md) covers model training, baseline and backbone comparisons, component ablations, classification evaluation, and complete-model inference benchmarking. The three comparison settings use explicit module definitions and a shared evaluation interface.
+## Code and usage
 
-Start with the [installation and experiment commands](revision/README.md) and the [configuration template](revision/configs/protocol.json). Set the channel frequencies, sampling interval, and DM grid to match the dynamic spectra used in the experiment.
+The [implementation guide](revision/README.md) covers input preparation, training, baseline comparisons, encoder substitutions, component ablations, and evaluation. Start with the [configuration template](revision/configs/protocol.json), using the physical coordinates and dimensions of the prepared intensity spectra.
 
-Each training run saves its configuration, checkpoint, validation and test predictions, and confusion-matrix counts. The supplied summary script calculates run-level metrics and statistics across training seeds. [Automated checks](.github/workflows/revision-tests.yml) cover physical alignment, model pathways, and evaluation calculations.
+The [complete-model benchmark](revision/benchmark.py) measures GPU-resident forward latency and records its timing boundary, device, precision, input shape, and individual measurements.
 
 ## Experimental records
 
-The [experimental records](experiment_records/20261012/README.md) provide run-level summaries, recorded complete-model parameter counts, original archived results and training logs, and identified historical source snapshots. Detailed records are kept outside the manuscript. The [parameter-count table](experiment_records/20261012/parameter_counts.csv) and [complete-model benchmark](revision/benchmark.py) specify the resources discussed in the reviewer response.
+We publish the [experimental records](experiment_records/20261012/README.md) separately from the manuscript:
 
-The main comparison series and archived development series are identified separately; uploading records is not a new model-training or independent reproduction run.
+- Main comparison: [run-level counts](experiment_records/20261012/main_run_counts.md) and [metric summaries](experiment_records/20261012/main_metric_summary.json).
+- Additional development runs: [original results and training logs](experiment_records/20261012/archive/) and [source index](experiment_records/20261012/archive_results_manifest.csv).
+- Computational accounting: [model-specific parameter counts](experiment_records/20261012/parameter_counts.csv).
+- Version identification: [archived source snapshot](experiment_records/20261012/source_snapshots/paper_repro/README.md).
+
+The main comparison and archived development runs are identified separately by their records. Use `revision/` for the current execution interface; the source snapshots preserve the corresponding historical implementations.
+
+## Verification
+
+The [implementation checks](revision/tests/test_reference.py) cover physical alignment, input validation, model pathways, and classification calculations. They can be run locally as described in the guide and through [GitHub Actions](.github/workflows/revision-tests.yml).

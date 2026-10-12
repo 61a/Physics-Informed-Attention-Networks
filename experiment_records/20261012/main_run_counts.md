@@ -1,8 +1,8 @@
-# Main comparison: run-level counts and metric summaries
+# Main comparison: run-level classification results
 
-The main comparison series reports five evaluations per configuration on a fixed test set containing 90 positive and 150 negative examples. Run identifiers 1–5 identify the supplied experimental records; they are not substituted for random-seed identifiers. Precision, recall, and F1 are computed separately for each run, followed by the arithmetic mean and sample standard deviation (n−1).
+We report five runs for each comparison configuration on the fixed test set containing 90 positive and 150 negative examples. Precision, recall, and F1 are calculated from each run's integer TP/FN/FP/TN counts, then aggregated as the arithmetic mean and sample standard deviation (n−1). Run labels 1–5 identify the records in this table.
 
-This record series is kept separate from the historical development runs in archive/. The archived paper_repro source is not asserted to identify the missing checkpoint-to-configuration provenance of these five main-series runs. Publication of these records is not a new training or inference run.
+This file provides count-based results for the main comparison. Additional development runs are documented separately in [archive/](archive/), with their own model and operating-threshold records. The published count tables are not checkpoint or sample-level prediction files.
 
 | 配置 | 召回率% | 精确率% | F1 |
 |---|---:|---:|---:|

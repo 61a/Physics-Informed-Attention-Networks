@@ -1,31 +1,27 @@
-# Experimental records (2026-10-12)
+# Experimental records
 
-This directory provides numerical records and source identifiers separately from the manuscript.
+We provide run-level numerical records, model-specific parameter counts, and source identifiers for the classification experiments.
 
-## Main comparison series
+## Main comparison
 
-- [Run-level confusion matrices and summaries](main_run_counts.md): five runs for each of 13 comparison configurations.
-- [Machine-readable mean and sample standard deviation](main_metric_summary.json): calculated from the run-level integer counts.
+The [count table](main_run_counts.md) reports five runs for each of 13 configurations on a fixed test set of 90 positive and 150 negative examples. [Metric summaries](main_metric_summary.json) give the arithmetic mean and sample standard deviation of the run-level metrics. Precision, recall, and F1 are calculated separately for each run before aggregation.
 
-## Archived development experiments
+## Additional development runs
 
-- [Parameter counts](parameter_counts.csv): recorded complete-model counts for the 22 identified development runs, with their model, seed, and validation-selected threshold.
-- [Source and log index](archive_results_manifest.csv): original source identities and repository-relative paths with SHA256 values.
-- [Original JSON records and training logs](archive/): the complete 13-configuration seed-42 series and three seeds each for MorphNet v1, v5, and v9.
-- [Source snapshot](source_snapshots/paper_repro/) and [checksums](source_snapshot_checksums.json): the historical paper_repro implementation.
+The [record index](archive_results_manifest.csv) links the original JSON files and training logs to repository paths and SHA256 identifiers. The [numerical summary](archive_metric_summary.json) retains all 13 configurations in the seed-42 comparison and all three recorded seeds for MorphNet v1, v5, and v9. The [original records](archive/) retain each run's operating threshold and model identity.
 
-The main five-run series and the historical development series are distinct records. They are not pooled, and the historical source and single-seed parameter counts are not substituted for the main-series configurations. The archived series includes all configurations in its complete comparison and all three seeds for each listed MorphNet variant. These files document experimental observations; publishing them is not a new independent reproduction run.
+We keep the main comparison and archived development series separate. The main-series files report integer classification counts and their summaries; the archive reports the additional runs identified in its index. These files provide numerical reporting records rather than a distribution of trained checkpoints or main-series sample-level predictions.
 
-## Parameter-count convention
+## Parameter counts
 
-Total parameters are counted over the complete instantiated classifier, including attention, encoder, input adaptation, projections, parameterized positions, and the classification head. Temporarily frozen parameters are included in the total; trainable counts are separate. Buffers are excluded. The historical paper_repro dispersion layer has 32 learnable DM anchors. The current public revision implementation instead uses fixed DM hypotheses; the two implementations are identified separately.
+The [parameter table](parameter_counts.csv) reports the complete-model totals recorded for the indexed development runs. Counts include the encoder, attention, projections, parameterized positional embeddings, input adaptation, and classification head, together with any trainable dispersion parameters. Temporarily frozen weights remain in total counts; buffers are excluded. The archived implementation uses 32 learnable DM anchors, while the current `revision/` implementation uses a fixed hypothesis grid.
+
+## Source versions
+
+The [source snapshot](source_snapshots/paper_repro/README.md) preserves the archived training and model definitions. [Checksums](source_snapshot_checksums.json) identify its retained source files. The current public execution code is in [revision/](../../revision/README.md). Record-specific model and threshold definitions should be used when interpreting each series.
 
 ## Inference benchmark
 
-The current [benchmark script](../../revision/benchmark.py) and [experiment guide](../../revision/README.md) define complete GPU-resident forward timing: model.eval(), inference_mode(), batch=1, FP32, TF32 disabled, 50 warm-up forwards and 200 timed forwards, with CUDA synchronization before and after each timing interval. Dispersion/FFT, fusion, encoding, and classification are included. File I/O, host preprocessing, and host-to-device transfer are excluded. The script saves individual timings, their mean and sample standard deviation, GPU/software information, input dimensions, parameter counts, and checkpoint hash.
+The [benchmark script](../../revision/benchmark.py) implements complete GPU-resident forward timing: batch=1, FP32, TF32 disabled, 50 warm-up forwards, and 200 timed forwards, with CUDA synchronization around each timed forward. It includes dispersion/FFT, fusion, encoding, and classification, and excludes file I/O, host preprocessing, and host-to-device transfer. The output records individual times, mean and sample standard deviation, device/software information, input shape, parameter counts, and checkpoint hash.
 
-These settings specify a benchmark procedure, not a newly measured latency result. Training elapsed time and diagnostic-loop timings are not reported as per-candidate inference latency.
-
-## Source identities
-
-The public revision implementation at the time this package was prepared was commit b65d265bcaf3acf028dd266eb59afed0fb41a46a. The historical source is preserved independently, including its original operator expression and pretraining/adaptation choices; it is not relabeled as the corrected revision implementation. The published records do not supply missing checkpoints, physical data metadata, or executed configurations for the main five-run series.
+This section specifies the measurement procedure. Measured latency is reported only in an output produced by running that procedure on a specified checkpoint and device.

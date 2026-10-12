@@ -16,58 +16,6 @@
     "sha256": "d1078211957d4b88548f573d6f238a41d5504671c27dbbf361ed37a05a165001"
   },
   {
-    "path": "source_snapshots/paper_repro/diag_attn_ops.py",
-    "sha256": "6d97a4108f3d65c624045a2289c7670be76059960a2140b9c55386303026dfd6"
-  },
-  {
-    "path": "source_snapshots/paper_repro/diag_fft_loop.py",
-    "sha256": "22ab05900f8778ac196b2389007690392eaa09a5d528855f85ad26d053d4322c"
-  },
-  {
-    "path": "source_snapshots/paper_repro/diag_gpu.py",
-    "sha256": "3d96e05d063b04cc3dda2dad97755ee5008685bb979a4353fb6e816daec4db4c"
-  },
-  {
-    "path": "source_snapshots/paper_repro/diag_gpu2.py",
-    "sha256": "e87f2dd30d69a5777b80ff8cd7237e41c202343e7a2cb0928a71933684ca0f55"
-  },
-  {
-    "path": "source_snapshots/paper_repro/diag_gpu3.py",
-    "sha256": "c7d4c018e97ba70cd4795201b9d3567fd853fc246d6077c2411588714c57c7e6"
-  },
-  {
-    "path": "source_snapshots/paper_repro/diag_gpu4.py",
-    "sha256": "d6ae0bb666f6030ce393d317693872185f660612780cd20cd52b259538415562"
-  },
-  {
-    "path": "source_snapshots/paper_repro/diag_gpu5.py",
-    "sha256": "0e2d52d3740e6388d23816aac9f25d1751e11d432d8292e8e9cd290c5f682a7e"
-  },
-  {
-    "path": "source_snapshots/paper_repro/diag_gpu6.py",
-    "sha256": "c4575ea8910b195e0f37f73ffa6c64c19d7051fb44ce6940b0a3e64db00d750a"
-  },
-  {
-    "path": "source_snapshots/paper_repro/diag_hello.py",
-    "sha256": "9a252e4373590e9707f9f9bdb927bf652f7101f2343a9b3b61d9e3c6ef620b8b"
-  },
-  {
-    "path": "source_snapshots/paper_repro/heimdall_baseline.py",
-    "sha256": "8ccbcaa97e0f7e967a02ed01dec979d10d8d695f00db5018b18fa31b687255ec"
-  },
-  {
-    "path": "source_snapshots/paper_repro/launch_detached.py",
-    "sha256": "0c49176808088894a209eff56a385a098caa34dcddd994a60adfb36becfd214d"
-  },
-  {
-    "path": "source_snapshots/paper_repro/list_av.py",
-    "sha256": "1300042d60248e78298054c568a54c7253f695ba00c1009f6c9812d903b6fcc0"
-  },
-  {
-    "path": "source_snapshots/paper_repro/list_procs.py",
-    "sha256": "5244333d5f65027e762d7da2588e90f9939db8aeb31118541922a10fa0869b06"
-  },
-  {
     "path": "source_snapshots/paper_repro/models/__init__.py",
     "sha256": "2806834f4027be02b5d2a1eed738deabc9d1344fe2e0a2336784d3e408d94d56"
   },
@@ -82,10 +30,6 @@
   {
     "path": "source_snapshots/paper_repro/models/frontend.py",
     "sha256": "44035bacd6c0d03707b8642bf391f8801fe3c6ee6a08310699bb866d7081c04c"
-  },
-  {
-    "path": "source_snapshots/paper_repro/monitor_all.py",
-    "sha256": "f30d63bfb7fa99c467d486979fedf1410b4916d713843d9ab9a328e233c779fd"
   },
   {
     "path": "source_snapshots/paper_repro/run_all_s42.py",
