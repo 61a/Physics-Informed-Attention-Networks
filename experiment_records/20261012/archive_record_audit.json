@@ -1,0 +1,423 @@
+{
+  "inventory_entries": 383,
+  "available_inventory_files": 383,
+  "missing_inventory_files": 0,
+  "hash_mismatches": 0,
+  "records_adopted": 22,
+  "stage_rows": [
+    {
+      "id": "AR01",
+      "family": "paper_repro",
+      "name": "Raw ResNet-18",
+      "seed": 42,
+      "threshold": 0.68,
+      "params": 11177538,
+      "cm": [
+        67,
+        23,
+        4,
+        146
+      ],
+      "precision": 0.9436619718309859,
+      "recall": 0.7444444444444445,
+      "f1": 0.8322981366459627,
+      "accuracy": 0.8875
+    },
+    {
+      "id": "AR02",
+      "family": "paper_repro",
+      "name": "Raw ViT-Small",
+      "seed": 42,
+      "threshold": 0.12,
+      "params": 21689090,
+      "cm": [
+        75,
+        15,
+        12,
+        138
+      ],
+      "precision": 0.8620689655172413,
+      "recall": 0.8333333333333334,
+      "f1": 0.847457627118644,
+      "accuracy": 0.8875
+    },
+    {
+      "id": "AR03",
+      "family": "paper_repro",
+      "name": "Front-end + ResNet-18",
+      "seed": 42,
+      "threshold": 0.1,
+      "params": 11593826,
+      "cm": [
+        72,
+        18,
+        8,
+        142
+      ],
+      "precision": 0.9,
+      "recall": 0.8,
+      "f1": 0.8470588235294118,
+      "accuracy": 0.8916666666666667
+    },
+    {
+      "id": "AR04",
+      "family": "paper_repro",
+      "name": "Front-end + ViT-Small",
+      "seed": 42,
+      "threshold": 0.13,
+      "params": 22105378,
+      "cm": [
+        72,
+        18,
+        6,
+        144
+      ],
+      "precision": 0.9230769230769231,
+      "recall": 0.8,
+      "f1": 0.8571428571428571,
+      "accuracy": 0.9
+    },
+    {
+      "id": "AR05",
+      "family": "paper_repro",
+      "name": "Bank + attention + Conformer",
+      "seed": 42,
+      "threshold": 0.78,
+      "params": 12075874,
+      "cm": [
+        72,
+        18,
+        11,
+        139
+      ],
+      "precision": 0.8674698795180723,
+      "recall": 0.8,
+      "f1": 0.8323699421965318,
+      "accuracy": 0.8791666666666667
+    },
+    {
+      "id": "AR06",
+      "family": "paper_repro",
+      "name": "Variant A",
+      "seed": 42,
+      "threshold": 0.15,
+      "params": 11655490,
+      "cm": [
+        71,
+        19,
+        2,
+        148
+      ],
+      "precision": 0.9726027397260274,
+      "recall": 0.7888888888888889,
+      "f1": 0.8711656441717791,
+      "accuracy": 0.9125
+    },
+    {
+      "id": "AR07",
+      "family": "paper_repro",
+      "name": "Variant B",
+      "seed": 42,
+      "threshold": 0.13,
+      "params": 11655522,
+      "cm": [
+        69,
+        21,
+        5,
+        145
+      ],
+      "precision": 0.9324324324324325,
+      "recall": 0.7666666666666667,
+      "f1": 0.8414634146341463,
+      "accuracy": 0.8916666666666667
+    },
+    {
+      "id": "AR08",
+      "family": "paper_repro",
+      "name": "Raw EfficientNet-B0",
+      "seed": 42,
+      "threshold": 0.48,
+      "params": 4010110,
+      "cm": [
+        70,
+        20,
+        6,
+        144
+      ],
+      "precision": 0.9210526315789473,
+      "recall": 0.7777777777777778,
+      "f1": 0.8433734939759037,
+      "accuracy": 0.8916666666666667
+    },
+    {
+      "id": "AR09",
+      "family": "paper_repro",
+      "name": "Raw ConvNeXt-Tiny",
+      "seed": 42,
+      "threshold": 0.1,
+      "params": 27821666,
+      "cm": [
+        71,
+        19,
+        2,
+        148
+      ],
+      "precision": 0.9726027397260274,
+      "recall": 0.7888888888888889,
+      "f1": 0.8711656441717791,
+      "accuracy": 0.9125
+    },
+    {
+      "id": "AR10",
+      "family": "paper_repro",
+      "name": "Raw MobileNetV3",
+      "seed": 42,
+      "threshold": 0.1,
+      "params": 4204594,
+      "cm": [
+        71,
+        19,
+        5,
+        145
+      ],
+      "precision": 0.9342105263157895,
+      "recall": 0.7888888888888889,
+      "f1": 0.8554216867469879,
+      "accuracy": 0.9
+    },
+    {
+      "id": "AR11",
+      "family": "paper_repro",
+      "name": "Front-end + EfficientNet-B0",
+      "seed": 42,
+      "threshold": 0.26,
+      "params": 4426398,
+      "cm": [
+        72,
+        18,
+        8,
+        142
+      ],
+      "precision": 0.9,
+      "recall": 0.8,
+      "f1": 0.8470588235294118,
+      "accuracy": 0.8916666666666667
+    },
+    {
+      "id": "AR12",
+      "family": "paper_repro",
+      "name": "Front-end + ConvNeXt-Tiny",
+      "seed": 42,
+      "threshold": 0.2,
+      "params": 28237954,
+      "cm": [
+        70,
+        20,
+        0,
+        150
+      ],
+      "precision": 1.0,
+      "recall": 0.7777777777777778,
+      "f1": 0.875,
+      "accuracy": 0.9166666666666666
+    },
+    {
+      "id": "AR13",
+      "family": "paper_repro",
+      "name": "Front-end + MobileNetV3",
+      "seed": 42,
+      "threshold": 0.76,
+      "params": 4620882,
+      "cm": [
+        71,
+        19,
+        1,
+        149
+      ],
+      "precision": 0.9861111111111112,
+      "recall": 0.7888888888888889,
+      "f1": 0.8765432098765432,
+      "accuracy": 0.9166666666666666
+    }
+  ],
+  "morphnet_rows": [
+    {
+      "id": "AR14",
+      "family": "MorphNet",
+      "name": "MorphNet v1",
+      "seed": 42,
+      "threshold": 0.9000000000000001,
+      "params": 7330562,
+      "cm": [
+        78,
+        12,
+        0,
+        150
+      ],
+      "auc": 0.9437777777777777,
+      "precision": 1.0,
+      "recall": 0.8666666666666667,
+      "f1": 0.9285714285714286,
+      "accuracy": 0.95
+    },
+    {
+      "id": "AR15",
+      "family": "MorphNet",
+      "name": "MorphNet v1",
+      "seed": 123,
+      "threshold": 0.2,
+      "params": 7330562,
+      "cm": [
+        79,
+        11,
+        0,
+        150
+      ],
+      "auc": 0.9434074074074075,
+      "precision": 1.0,
+      "recall": 0.8777777777777778,
+      "f1": 0.9349112426035503,
+      "accuracy": 0.9541666666666667
+    },
+    {
+      "id": "AR16",
+      "family": "MorphNet",
+      "name": "MorphNet v1",
+      "seed": 789,
+      "threshold": 0.35000000000000003,
+      "params": 7330562,
+      "cm": [
+        77,
+        13,
+        5,
+        145
+      ],
+      "auc": 0.9244444444444445,
+      "precision": 0.9390243902439024,
+      "recall": 0.8555555555555555,
+      "f1": 0.8953488372093024,
+      "accuracy": 0.925
+    },
+    {
+      "id": "AR17",
+      "family": "MorphNet",
+      "name": "MorphNet v5",
+      "seed": 42,
+      "threshold": 0.9000000000000001,
+      "params": 7330562,
+      "cm": [
+        80,
+        10,
+        1,
+        149
+      ],
+      "auc": 0.966,
+      "precision": 0.9876543209876543,
+      "recall": 0.8888888888888888,
+      "f1": 0.935672514619883,
+      "accuracy": 0.9541666666666667
+    },
+    {
+      "id": "AR18",
+      "family": "MorphNet",
+      "name": "MorphNet v5",
+      "seed": 123,
+      "threshold": 0.8500000000000001,
+      "params": 7330562,
+      "cm": [
+        75,
+        15,
+        2,
+        148
+      ],
+      "auc": 0.9628148148148148,
+      "precision": 0.974025974025974,
+      "recall": 0.8333333333333334,
+      "f1": 0.8982035928143712,
+      "accuracy": 0.9291666666666667
+    },
+    {
+      "id": "AR19",
+      "family": "MorphNet",
+      "name": "MorphNet v5",
+      "seed": 789,
+      "threshold": 0.05,
+      "params": 7330562,
+      "cm": [
+        77,
+        13,
+        3,
+        147
+      ],
+      "auc": 0.9277037037037037,
+      "precision": 0.9625,
+      "recall": 0.8555555555555555,
+      "f1": 0.9058823529411765,
+      "accuracy": 0.9333333333333333
+    },
+    {
+      "id": "AR20",
+      "family": "MorphNet",
+      "name": "MorphNet v9",
+      "seed": 42,
+      "threshold": 0.15000000000000002,
+      "params": 7359810,
+      "cm": [
+        78,
+        12,
+        5,
+        145
+      ],
+      "auc": 0.9543703703703704,
+      "precision": 0.9397590361445783,
+      "recall": 0.8666666666666667,
+      "f1": 0.9017341040462428,
+      "accuracy": 0.9291666666666667
+    },
+    {
+      "id": "AR21",
+      "family": "MorphNet",
+      "name": "MorphNet v9",
+      "seed": 123,
+      "threshold": 0.6500000000000001,
+      "params": 7359810,
+      "cm": [
+        74,
+        16,
+        3,
+        147
+      ],
+      "auc": 0.9331851851851852,
+      "precision": 0.961038961038961,
+      "recall": 0.8222222222222222,
+      "f1": 0.8862275449101796,
+      "accuracy": 0.9208333333333333
+    },
+    {
+      "id": "AR22",
+      "family": "MorphNet",
+      "name": "MorphNet v9",
+      "seed": 789,
+      "threshold": 0.6000000000000001,
+      "params": 7359810,
+      "cm": [
+        77,
+        13,
+        4,
+        146
+      ],
+      "auc": 0.934962962962963,
+      "precision": 0.9506172839506173,
+      "recall": 0.8555555555555555,
+      "f1": 0.9005847953216374,
+      "accuracy": 0.9291666666666667
+    }
+  ],
+  "limitations": [
+    "No new model training or inference",
+    "No pooling with the author-verified five-run tables",
+    "Seed-dependent split identity not inferred",
+    "AUC values retained from records; not independently recomputed without scores",
+    "Test-optimized thresholds and ensembles excluded from confirmatory tables"
+  ]
+}

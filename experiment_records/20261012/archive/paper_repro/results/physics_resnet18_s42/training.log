@@ -1,0 +1,40 @@
+2026-08-18 19:16:21,841 - paper_repro | model=physics_resnet18 seed=42
+2026-08-18 19:16:21,944 - GPU NVIDIA GeForce RTX 5080 total=17.1GB cap=70%=12.0GB
+2026-08-18 19:16:21,944 - Device: cuda
+2026-08-18 19:16:22,017 - Loaded split D:/FRB_RFI_Detection_AAS74510/paper_repro/results/split_71515_s42.json | {'train': 1120, 'val': 240, 'test': 240, 'test_pos': 90, 'test_neg': 150, 'val_pos': 90, 'val_neg': 150}
+2026-08-18 19:16:22,083 - Datasets: train=1120 val=240 test=240
+2026-08-18 19:16:23,282 - Model physics_resnet18: total params=11,593,826 trainable=11,593,826
+2026-08-18 19:24:04,473 - ep   0 | lr 2.00e-05 | train_loss 0.4884 acc 0.7679 | val F1 0.8690 (thr 0.34) | pat 0
+2026-08-18 19:30:28,908 - ep   1 | lr 4.00e-05 | train_loss 0.3566 acc 0.8643 | val F1 0.8199 (thr 0.53) | pat 0
+2026-08-18 19:36:48,812 - ep   2 | lr 6.00e-05 | train_loss 0.3231 acc 0.8946 | val F1 0.8824 (thr 0.76) | pat 1
+2026-08-18 19:43:07,888 - ep   3 | lr 8.00e-05 | train_loss 0.2833 acc 0.8991 | val F1 0.8521 (thr 0.62) | pat 0
+2026-08-18 19:49:24,242 - ep   4 | lr 1.00e-04 | train_loss 0.2733 acc 0.9027 | val F1 0.8889 (thr 0.15) | pat 1
+2026-08-18 19:57:15,664 - ep   5 | lr 1.00e-04 | train_loss 0.3507 acc 0.9018 | val F1 0.8916 (thr 0.68) | pat 0
+2026-08-18 20:03:40,282 - ep   6 | lr 1.00e-04 | train_loss 0.2188 acc 0.9232 | val F1 0.8750 (thr 0.27) | pat 0
+2026-08-18 20:10:00,836 - ep   7 | lr 1.00e-04 | train_loss 0.1511 acc 0.9473 | val F1 0.8712 (thr 0.58) | pat 1
+2026-08-18 20:17:56,457 - ep   8 | lr 9.99e-05 | train_loss 0.2293 acc 0.9402 | val F1 0.8571 (thr 0.11) | pat 2
+2026-08-18 20:24:15,305 - ep   9 | lr 9.99e-05 | train_loss 0.1255 acc 0.9679 | val F1 0.8876 (thr 0.49) | pat 3
+2026-08-18 20:30:38,399 - ep  10 | lr 9.98e-05 | train_loss 0.1184 acc 0.9661 | val F1 0.8535 (thr 0.10) | pat 4
+2026-08-18 20:38:24,628 - ep  11 | lr 9.98e-05 | train_loss 0.0964 acc 0.9732 | val F1 0.8994 (thr 0.10) | pat 5
+2026-08-18 20:46:09,377 - ep  12 | lr 9.97e-05 | train_loss 0.1308 acc 0.9679 | val F1 0.8750 (thr 0.13) | pat 0
+2026-08-18 20:52:30,366 - ep  13 | lr 9.96e-05 | train_loss 0.1132 acc 0.9723 | val F1 0.8876 (thr 0.10) | pat 1
+2026-08-18 21:00:12,799 - ep  14 | lr 9.95e-05 | train_loss 0.0669 acc 0.9830 | val F1 0.8743 (thr 0.75) | pat 2
+2026-08-18 21:06:26,618 - ep  15 | lr 9.94e-05 | train_loss 0.0451 acc 0.9795 | val F1 0.8862 (thr 0.11) | pat 3
+2026-08-18 21:12:46,434 - ep  16 | lr 9.92e-05 | train_loss 0.0781 acc 0.9812 | val F1 0.8671 (thr 0.16) | pat 4
+2026-08-18 21:19:11,435 - ep  17 | lr 9.91e-05 | train_loss 0.0429 acc 0.9875 | val F1 0.8765 (thr 0.10) | pat 5
+2026-08-18 21:25:27,325 - ep  18 | lr 9.89e-05 | train_loss 0.0350 acc 0.9911 | val F1 0.8679 (thr 0.81) | pat 6
+2026-08-18 21:33:11,817 - ep  19 | lr 9.87e-05 | train_loss 0.0345 acc 0.9866 | val F1 0.8994 (thr 0.89) | pat 7
+2026-08-18 21:39:38,726 - ep  20 | lr 9.85e-05 | train_loss 0.0214 acc 0.9920 | val F1 0.8625 (thr 0.19) | pat 8
+2026-08-18 21:47:21,994 - ep  21 | lr 9.83e-05 | train_loss 0.0488 acc 0.9857 | val F1 0.8953 (thr 0.56) | pat 9
+2026-08-18 21:53:40,905 - ep  22 | lr 9.81e-05 | train_loss 0.0645 acc 0.9830 | val F1 0.8970 (thr 0.45) | pat 10
+2026-08-18 22:00:01,051 - ep  23 | lr 9.79e-05 | train_loss 0.0368 acc 0.9839 | val F1 0.8625 (thr 0.10) | pat 11
+2026-08-18 22:06:29,313 - ep  24 | lr 9.77e-05 | train_loss 0.0189 acc 0.9911 | val F1 0.8554 (thr 0.25) | pat 12
+2026-08-18 22:12:57,656 - ep  25 | lr 9.74e-05 | train_loss 0.0892 acc 0.9768 | val F1 0.8605 (thr 0.89) | pat 13
+2026-08-18 22:21:00,375 - ep  26 | lr 9.72e-05 | train_loss 0.0754 acc 0.9857 | val F1 0.8589 (thr 0.45) | pat 14
+2026-08-18 22:29:06,610 - ep  27 | lr 9.69e-05 | train_loss 0.0287 acc 0.9902 | val F1 0.8696 (thr 0.54) | pat 15
+2026-08-18 22:37:05,976 - ep  28 | lr 9.66e-05 | train_loss 0.0046 acc 0.9982 | val F1 0.8757 (thr 0.38) | pat 16
+2026-08-18 22:44:55,970 - ep  29 | lr 9.63e-05 | train_loss 0.0090 acc 0.9955 | val F1 0.8864 (thr 0.77) | pat 17
+2026-08-18 22:54:17,824 - ep  30 | lr 9.60e-05 | train_loss 0.0726 acc 0.9884 | val F1 0.8957 (thr 0.42) | pat 18
+2026-08-18 22:54:22,409 - Early stop at epoch 30 (patience 15)
+2026-08-18 22:56:06,878 - TEST  F1=0.8471 recall=0.8 precision=0.9 AUC=0.9203 CM=(72,18,8,142)
+2026-08-18 22:56:06,878 - Saved metrics.json | train_time=13079.1s

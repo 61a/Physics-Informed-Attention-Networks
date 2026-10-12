@@ -1,0 +1,42 @@
+2026-08-10 08:48:06 - ============================================================
+2026-08-10 08:48:06 - FRB-MorphNet v5: v1 + Hard Sample Oversampling
+2026-08-10 08:48:06 - ============================================================
+2026-08-10 08:48:06 - Seed=42, Epochs=200, BS=8, LR=0.0001
+2026-08-10 08:48:06 - Oversample factor: 2x (each hard sample appears 3x)
+2026-08-10 08:48:06 - Hard samples in train: 14, in val: 3, in test: 12
+2026-08-10 08:48:06 - Total train items: 1148 (original 1120 + 28 oversampled)
+2026-08-10 08:48:06 - Parameters: 7,330,562
+2026-08-10 08:48:06 - GPU: NVIDIA GeForce RTX 5080
+2026-08-10 08:48:06 - ============================================================
+2026-08-10 08:50:26 - E1: loss=0.7025 acc=0.6620 hard_acc=0.2381 | val_f1=0.7561(thr=0.45) TP=62 FN=28 FP=12 | val_hard: TP=0 FN=3 | lr=4.00e-05
+2026-08-10 08:50:28 -   бя New best val_f1=0.7561 (thr=0.45) FN=28 FP=12
+2026-08-10 08:56:06 - E2: loss=0.5039 acc=0.8171 hard_acc=0.1667 | val_f1=0.8727(thr=0.25) TP=72 FN=18 FP=3 | val_hard: TP=0 FN=3 | lr=6.00e-05
+2026-08-10 08:56:08 -   бя New best val_f1=0.8727 (thr=0.25) FN=18 FP=3
+2026-08-10 08:59:13 - E3: loss=0.4083 acc=0.8632 hard_acc=0.2143 | val_f1=0.9123(thr=0.75) TP=78 FN=12 FP=3 | val_hard: TP=1 FN=2 | lr=8.00e-05
+2026-08-10 08:59:14 -   бя New best val_f1=0.9123 (thr=0.75) FN=12 FP=3
+2026-08-10 09:03:52 - E4: loss=0.4434 acc=0.8632 hard_acc=0.3095 | val_f1=0.8715(thr=0.15) TP=78 FN=12 FP=11 | val_hard: TP=1 FN=2 | lr=1.00e-04
+2026-08-10 09:06:20 - E5: loss=0.4574 acc=0.8519 hard_acc=0.4048 | val_f1=0.8214(thr=0.20) TP=69 FN=21 FP=9 | val_hard: TP=0 FN=3 | lr=1.00e-04
+2026-08-10 09:08:51 - E6: loss=0.3711 acc=0.8772 hard_acc=0.3571 | val_f1=0.7424(thr=0.90) TP=85 FN=5 FP=54 | val_hard: TP=2 FN=1 | lr=1.00e-04
+2026-08-10 09:11:22 - E7: loss=0.4314 acc=0.8676 hard_acc=0.3095 | val_f1=0.8862(thr=0.25) TP=74 FN=16 FP=3 | val_hard: TP=0 FN=3 | lr=1.00e-04
+2026-08-10 09:15:23 - E8: loss=0.3908 acc=0.8868 hard_acc=0.4286 | val_f1=0.8351(thr=0.90) TP=81 FN=9 FP=23 | val_hard: TP=0 FN=3 | lr=9.99e-05
+2026-08-10 09:17:48 - E9: loss=0.3267 acc=0.9033 hard_acc=0.6190 | val_f1=0.8902(thr=0.05) TP=73 FN=17 FP=1 | val_hard: TP=0 FN=3 | lr=9.99e-05
+2026-08-10 09:20:16 - E10: loss=0.3360 acc=0.9068 hard_acc=0.4286 | val_f1=0.8606(thr=0.45) TP=71 FN=19 FP=4 | val_hard: TP=0 FN=3 | lr=9.98e-05
+2026-08-10 09:24:20 - E11: loss=0.2955 acc=0.9164 hard_acc=0.6190 | val_f1=0.9167(thr=0.85) TP=77 FN=13 FP=1 | val_hard: TP=0 FN=3 | lr=9.98e-05
+2026-08-10 09:24:22 -   бя New best val_f1=0.9167 (thr=0.85) FN=13 FP=1
+2026-08-10 09:26:44 - E12: loss=0.2849 acc=0.9111 hard_acc=0.5000 | val_f1=0.8848(thr=0.60) TP=73 FN=17 FP=2 | val_hard: TP=0 FN=3 | lr=9.97e-05
+2026-08-10 09:31:15 - E13: loss=0.2645 acc=0.9390 hard_acc=0.6905 | val_f1=0.8970(thr=0.10) TP=74 FN=16 FP=1 | val_hard: TP=0 FN=3 | lr=9.96e-05
+2026-08-10 09:33:38 - E14: loss=0.2596 acc=0.9242 hard_acc=0.6667 | val_f1=0.8957(thr=0.10) TP=73 FN=17 FP=0 | val_hard: TP=0 FN=3 | lr=9.95e-05
+2026-08-10 09:36:01 - E15: loss=0.2347 acc=0.9416 hard_acc=0.8095 | val_f1=0.8994(thr=0.65) TP=76 FN=14 FP=3 | val_hard: TP=0 FN=3 | lr=9.94e-05
+2026-08-10 09:38:25 - E16: loss=0.2107 acc=0.9486 hard_acc=0.8810 | val_f1=0.8623(thr=0.85) TP=72 FN=18 FP=5 | val_hard: TP=0 FN=3 | lr=9.92e-05
+2026-08-10 09:40:44 - E17: loss=0.1585 acc=0.9573 hard_acc=0.8571 | val_f1=0.8625(thr=0.05) TP=69 FN=21 FP=1 | val_hard: TP=0 FN=3 | lr=9.91e-05
+2026-08-10 09:43:04 - E18: loss=0.2346 acc=0.9608 hard_acc=0.9286 | val_f1=0.8929(thr=0.05) TP=75 FN=15 FP=3 | val_hard: TP=0 FN=3 | lr=9.89e-05
+2026-08-10 09:47:45 - E19: loss=0.1636 acc=0.9599 hard_acc=0.8571 | val_f1=0.9036(thr=0.05) TP=75 FN=15 FP=1 | val_hard: TP=0 FN=3 | lr=9.87e-05
+2026-08-10 09:50:09 - E20: loss=0.1355 acc=0.9634 hard_acc=0.9524 | val_f1=0.9048(thr=0.05) TP=76 FN=14 FP=2 | val_hard: TP=0 FN=3 | lr=9.85e-05
+2026-08-10 09:52:35 - E21: loss=0.1238 acc=0.9634 hard_acc=0.8333 | val_f1=0.9017(thr=0.90) TP=78 FN=12 FP=5 | val_hard: TP=0 FN=3 | lr=9.83e-05
+2026-08-10 09:55:01 - E22: loss=0.0785 acc=0.9791 hard_acc=0.9524 | val_f1=0.8721(thr=0.90) TP=75 FN=15 FP=7 | val_hard: TP=0 FN=3 | lr=9.81e-05
+2026-08-10 09:57:26 - E23: loss=0.0786 acc=0.9800 hard_acc=0.9524 | val_f1=0.9048(thr=0.05) TP=76 FN=14 FP=2 | val_hard: TP=0 FN=3 | lr=9.79e-05
+2026-08-10 10:01:28 - E24: loss=0.3422 acc=0.9721 hard_acc=0.9048 | val_f1=0.8941(thr=0.05) TP=76 FN=14 FP=4 | val_hard: TP=0 FN=3 | lr=9.77e-05
+2026-08-10 10:03:54 - E25: loss=0.0987 acc=0.9782 hard_acc=0.9286 | val_f1=0.8994(thr=0.90) TP=76 FN=14 FP=3 | val_hard: TP=0 FN=3 | lr=9.74e-05
+2026-08-10 10:06:18 - E26: loss=0.0479 acc=0.9826 hard_acc=1.0000 | val_f1=0.9176(thr=0.90) TP=78 FN=12 FP=2 | val_hard: TP=0 FN=3 | lr=9.72e-05
+2026-08-10 10:06:19 -   бя New best val_f1=0.9176 (thr=0.90) FN=12 FP=2
+2026-08-10 10:08:42 - E27: loss=0.0784 acc=0.9782 hard_acc=0.9524 | val_f1=0.8814(thr=0.75) TP=78 FN=12 FP=9 | val_hard: TP=0 FN=3 | lr=9.69e-05

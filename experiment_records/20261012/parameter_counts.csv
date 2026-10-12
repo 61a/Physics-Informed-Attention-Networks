@@ -1,0 +1,23 @@
+record_id,experiment_family,model,seed,total_parameters,validation_threshold
+AR01,paper_repro,Raw ResNet-18,42,11177538,0.68
+AR02,paper_repro,Raw ViT-Small,42,21689090,0.12
+AR03,paper_repro,Front-end + ResNet-18,42,11593826,0.1
+AR04,paper_repro,Front-end + ViT-Small,42,22105378,0.13
+AR05,paper_repro,Bank + attention + Conformer,42,12075874,0.78
+AR06,paper_repro,Variant A,42,11655490,0.15
+AR07,paper_repro,Variant B,42,11655522,0.13
+AR08,paper_repro,Raw EfficientNet-B0,42,4010110,0.48
+AR09,paper_repro,Raw ConvNeXt-Tiny,42,27821666,0.1
+AR10,paper_repro,Raw MobileNetV3,42,4204594,0.1
+AR11,paper_repro,Front-end + EfficientNet-B0,42,4426398,0.26
+AR12,paper_repro,Front-end + ConvNeXt-Tiny,42,28237954,0.2
+AR13,paper_repro,Front-end + MobileNetV3,42,4620882,0.76
+AR14,MorphNet,MorphNet v1,42,7330562,0.9000000000000001
+AR15,MorphNet,MorphNet v1,123,7330562,0.2
+AR16,MorphNet,MorphNet v1,789,7330562,0.35000000000000003
+AR17,MorphNet,MorphNet v5,42,7330562,0.9000000000000001
+AR18,MorphNet,MorphNet v5,123,7330562,0.8500000000000001
+AR19,MorphNet,MorphNet v5,789,7330562,0.05
+AR20,MorphNet,MorphNet v9,42,7359810,0.15000000000000002
+AR21,MorphNet,MorphNet v9,123,7359810,0.6500000000000001
+AR22,MorphNet,MorphNet v9,789,7359810,0.6000000000000001

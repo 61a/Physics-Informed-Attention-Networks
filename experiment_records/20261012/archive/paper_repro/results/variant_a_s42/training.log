@@ -1,0 +1,40 @@
+2026-08-19 07:23:27,586 - paper_repro | model=variant_a seed=42
+2026-08-19 07:23:27,687 - GPU NVIDIA GeForce RTX 5080 total=17.1GB cap=70%=12.0GB
+2026-08-19 07:23:27,687 - Device: cuda
+2026-08-19 07:23:27,717 - Loaded split D:/FRB_RFI_Detection_AAS74510/paper_repro/results/split_71515_s42.json | {'train': 1120, 'val': 240, 'test': 240, 'test_pos': 90, 'test_neg': 150, 'val_pos': 90, 'val_neg': 150}
+2026-08-19 07:23:27,783 - Datasets: train=1120 val=240 test=240
+2026-08-19 07:23:27,835 - Model variant_a: total params=11,655,490 trainable=11,655,490
+2026-08-19 07:32:34,598 - ep   0 | lr 2.00e-05 | train_loss 0.4655 acc 0.7893 | val F1 0.8503 (thr 0.17) | pat 0
+2026-08-19 07:39:03,827 - ep   1 | lr 4.00e-05 | train_loss 0.3173 acc 0.8920 | val F1 0.8205 (thr 0.11) | pat 0
+2026-08-19 07:46:54,096 - ep   2 | lr 6.00e-05 | train_loss 0.3133 acc 0.9054 | val F1 0.8712 (thr 0.31) | pat 1
+2026-08-19 07:53:17,077 - ep   3 | lr 8.00e-05 | train_loss 0.3276 acc 0.9054 | val F1 0.8765 (thr 0.23) | pat 0
+2026-08-19 07:59:40,497 - ep   4 | lr 1.00e-04 | train_loss 0.3335 acc 0.9080 | val F1 0.8795 (thr 0.13) | pat 0
+2026-08-19 08:06:13,420 - ep   5 | lr 1.00e-04 | train_loss 0.2813 acc 0.9223 | val F1 0.8675 (thr 0.87) | pat 0
+2026-08-19 08:14:01,963 - ep   6 | lr 1.00e-04 | train_loss 0.2244 acc 0.9357 | val F1 0.8636 (thr 0.70) | pat 1
+2026-08-19 08:20:25,830 - ep   7 | lr 1.00e-04 | train_loss 0.2294 acc 0.9429 | val F1 0.8750 (thr 0.42) | pat 2
+2026-08-19 08:28:22,957 - ep   8 | lr 9.99e-05 | train_loss 0.2269 acc 0.9393 | val F1 0.8848 (thr 0.82) | pat 3
+2026-08-19 08:34:45,583 - ep   9 | lr 9.99e-05 | train_loss 0.2217 acc 0.9446 | val F1 0.8941 (thr 0.15) | pat 0
+2026-08-19 08:42:37,585 - ep  10 | lr 9.98e-05 | train_loss 0.1908 acc 0.9518 | val F1 0.8323 (thr 0.10) | pat 0
+2026-08-19 08:49:03,745 - ep  11 | lr 9.98e-05 | train_loss 0.1948 acc 0.9500 | val F1 0.8444 (thr 0.85) | pat 1
+2026-08-19 08:55:28,108 - ep  12 | lr 9.97e-05 | train_loss 0.1963 acc 0.9527 | val F1 0.8851 (thr 0.10) | pat 2
+2026-08-19 09:01:51,853 - ep  13 | lr 9.96e-05 | train_loss 0.1810 acc 0.9527 | val F1 0.8736 (thr 0.79) | pat 3
+2026-08-19 09:08:13,424 - ep  14 | lr 9.95e-05 | train_loss 0.1746 acc 0.9571 | val F1 0.8820 (thr 0.56) | pat 4
+2026-08-19 09:15:53,178 - ep  15 | lr 9.94e-05 | train_loss 0.1543 acc 0.9661 | val F1 0.8020 (thr 0.87) | pat 5
+2026-08-19 09:23:47,979 - ep  16 | lr 9.92e-05 | train_loss 0.1900 acc 0.9571 | val F1 0.8837 (thr 0.88) | pat 6
+2026-08-19 09:30:15,756 - ep  17 | lr 9.91e-05 | train_loss 0.1399 acc 0.9643 | val F1 0.8786 (thr 0.36) | pat 7
+2026-08-19 09:36:35,027 - ep  18 | lr 9.89e-05 | train_loss 0.1258 acc 0.9705 | val F1 0.8488 (thr 0.45) | pat 8
+2026-08-19 09:44:24,458 - ep  19 | lr 9.87e-05 | train_loss 0.0960 acc 0.9795 | val F1 0.8478 (thr 0.87) | pat 9
+2026-08-19 09:53:28,179 - ep  20 | lr 9.85e-05 | train_loss 0.1280 acc 0.9741 | val F1 0.8743 (thr 0.70) | pat 10
+2026-08-19 10:00:07,351 - ep  21 | lr 9.83e-05 | train_loss 0.0932 acc 0.9777 | val F1 0.8621 (thr 0.71) | pat 11
+2026-08-19 10:06:28,892 - ep  22 | lr 9.81e-05 | train_loss 0.0926 acc 0.9795 | val F1 0.8537 (thr 0.86) | pat 12
+2026-08-19 10:15:40,816 - ep  23 | lr 9.79e-05 | train_loss 0.0807 acc 0.9812 | val F1 0.8606 (thr 0.89) | pat 13
+2026-08-19 10:22:05,192 - ep  24 | lr 9.77e-05 | train_loss 0.0622 acc 0.9893 | val F1 0.8177 (thr 0.66) | pat 14
+2026-08-19 10:28:30,549 - ep  25 | lr 9.74e-05 | train_loss 0.0723 acc 0.9830 | val F1 0.8706 (thr 0.16) | pat 15
+2026-08-19 10:34:52,197 - ep  26 | lr 9.72e-05 | train_loss 0.1051 acc 0.9812 | val F1 0.8721 (thr 0.88) | pat 16
+2026-08-19 10:42:44,439 - ep  27 | lr 9.69e-05 | train_loss 0.0538 acc 0.9902 | val F1 0.8000 (thr 0.23) | pat 17
+2026-08-19 10:49:12,924 - ep  28 | lr 9.66e-05 | train_loss 0.0953 acc 0.9839 | val F1 0.8889 (thr 0.58) | pat 18
+2026-08-19 10:55:33,837 - ep  29 | lr 9.63e-05 | train_loss 0.0504 acc 0.9920 | val F1 0.8352 (thr 0.60) | pat 19
+2026-08-19 11:02:04,266 - ep  30 | lr 9.60e-05 | train_loss 0.0715 acc 0.9875 | val F1 0.8535 (thr 0.10) | pat 20
+2026-08-19 11:02:09,638 - Early stop at epoch 30 (patience 15)
+2026-08-19 11:03:55,101 - TEST  F1=0.8712 recall=0.7889 precision=0.9726 AUC=0.9118 CM=(71,19,2,148)
+2026-08-19 11:03:55,101 - Saved metrics.json | train_time=13120.9s

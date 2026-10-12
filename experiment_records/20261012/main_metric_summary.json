@@ -1,0 +1,184 @@
+{
+  "raw_resnet18": {
+    "recall_percent": {
+      "mean": 73.55555555555556,
+      "sample_sd": 0.929622251704526
+    },
+    "precision_percent": {
+      "mean": 80.93116367910667,
+      "sample_sd": 0.5339901723291457
+    },
+    "f1": {
+      "mean": 0.7706451689426947,
+      "sample_sd": 0.005961291570083752
+    }
+  },
+  "raw_vit_small": {
+    "recall_percent": {
+      "mean": 79.77777777777777,
+      "sample_sd": 0.929622251704531
+    },
+    "precision_percent": {
+      "mean": 75.58464131161917,
+      "sample_sd": 0.5172445822885866
+    },
+    "f1": {
+      "mean": 0.7762032008909735,
+      "sample_sd": 0.0035149758146269332
+    }
+  },
+  "raw_efficientnet_b0": {
+    "recall_percent": {
+      "mean": 77.77777777777777,
+      "sample_sd": 0.7856742013183834
+    },
+    "precision_percent": {
+      "mean": 79.36564404212602,
+      "sample_sd": 0.4316424863368994
+    },
+    "f1": {
+      "mean": 0.7856227438455458,
+      "sample_sd": 0.005202647326291836
+    }
+  },
+  "raw_convnext_tiny": {
+    "recall_percent": {
+      "mean": 83.55555555555556,
+      "sample_sd": 0.929622251704526
+    },
+    "precision_percent": {
+      "mean": 81.38528839089848,
+      "sample_sd": 0.44594937264377377
+    },
+    "f1": {
+      "mean": 0.824545939825353,
+      "sample_sd": 0.0060076608023402886
+    }
+  },
+  "raw_mobilenet_v3_large": {
+    "recall_percent": {
+      "mean": 72.88888888888889,
+      "sample_sd": 0.6085806194501785
+    },
+    "precision_percent": {
+      "mean": 78.09841044851676,
+      "sample_sd": 0.42529324517618944
+    },
+    "f1": {
+      "mean": 0.7540164583274012,
+      "sample_sd": 0.0029397214026461627
+    }
+  },
+  "raw_conformer": {
+    "recall_percent": {
+      "mean": 83.55555555555556,
+      "sample_sd": 0.929622251704526
+    },
+    "precision_percent": {
+      "mean": 87.85364988016056,
+      "sample_sd": 0.5327568474055989
+    },
+    "f1": {
+      "mean": 0.8564767445685038,
+      "sample_sd": 0.0052299962161012235
+    }
+  },
+  "learned_resnet18": {
+    "recall_percent": {
+      "mean": 88.0,
+      "sample_sd": 0.929622251704526
+    },
+    "precision_percent": {
+      "mean": 89.19394448162367,
+      "sample_sd": 0.4792317202074912
+    },
+    "f1": {
+      "mean": 0.885891144733036,
+      "sample_sd": 0.003602171796030065
+    }
+  },
+  "learned_vit_small": {
+    "recall_percent": {
+      "mean": 82.66666666666667,
+      "sample_sd": 0.6085806194501785
+    },
+    "precision_percent": {
+      "mean": 86.51559035803577,
+      "sample_sd": 0.5002057437035305
+    },
+    "f1": {
+      "mean": 0.8454505833149901,
+      "sample_sd": 0.0026842448120094962
+    }
+  },
+  "learned_efficientnet_b0": {
+    "recall_percent": {
+      "mean": 82.88888888888889,
+      "sample_sd": 0.6085806194501785
+    },
+    "precision_percent": {
+      "mean": 83.63466121893089,
+      "sample_sd": 0.5078656752924523
+    },
+    "f1": {
+      "mean": 0.8325863620195426,
+      "sample_sd": 0.004027124767757799
+    }
+  },
+  "learned_convnext_tiny": {
+    "recall_percent": {
+      "mean": 90.66666666666667,
+      "sample_sd": 0.6085806194501863
+    },
+    "precision_percent": {
+      "mean": 87.93301701928719,
+      "sample_sd": 0.39599101164980427
+    },
+    "f1": {
+      "mean": 0.8927747709643646,
+      "sample_sd": 0.0031419174528025356
+    }
+  },
+  "learned_mobilenet_v3_large": {
+    "recall_percent": {
+      "mean": 79.11111111111111,
+      "sample_sd": 0.929622251704531
+    },
+    "precision_percent": {
+      "mean": 80.36468129571578,
+      "sample_sd": 0.3450284000938473
+    },
+    "f1": {
+      "mean": 0.7972932139909858,
+      "sample_sd": 0.00371415235423429
+    }
+  },
+  "uniform_conformer": {
+    "recall_percent": {
+      "mean": 92.0,
+      "sample_sd": 0.929622251704526
+    },
+    "precision_percent": {
+      "mean": 88.8418728178807,
+      "sample_sd": 0.5618006318243842
+    },
+    "f1": {
+      "mean": 0.9039189961855678,
+      "sample_sd": 0.00641032668526461
+    }
+  },
+  "learned_conformer": {
+    "recall_percent": {
+      "mean": 96.66666666666667,
+      "sample_sd": 0.7856742013183834
+    },
+    "precision_percent": {
+      "mean": 93.95482080510877,
+      "sample_sd": 0.5593688938835245
+    },
+    "f1": {
+      "mean": 0.952896853680888,
+      "sample_sd": 0.004968865946516742
+    }
+  }
+}
