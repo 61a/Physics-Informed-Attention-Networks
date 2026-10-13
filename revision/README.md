@@ -70,8 +70,3 @@ python -m unittest discover -s tests -v
 ```
 
 The checks cover dispersion units and alignment direction, window-boundary handling, confusion-matrix arithmetic, validation-threshold selection, physical-layer gradients, Conformer pathways, and the five baseline encoders. Use the data manifest for observational experiments and a CUDA device for the stated inference benchmark.
-
-
-## Published numerical records
-
-We provide [main comparison summaries and archived experimental records](../experiment_records/20261012/README.md) together with [model-specific parameter counts](../experiment_records/20261012/parameter_counts.csv). The development-run index identifies the archived source records and operating thresholds. Generated run outputs and the published numerical record series are separate artifacts; use the matching record definitions when interpreting results.
