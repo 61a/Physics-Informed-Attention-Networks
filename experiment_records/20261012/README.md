@@ -8,7 +8,7 @@ The [count table](main_run_counts.md) reports five runs for each of 13 configura
 
 ## Additional development runs
 
-The [record index](archive_results_manifest.csv) links the original JSON files and training logs to repository paths and SHA256 identifiers. The [numerical summary](archive_metric_summary.json) retains all 13 configurations in the seed-42 comparison and all three recorded seeds for MorphNet v1, v5, and v9. The [original records](archive/) retain each run's operating threshold and model identity.
+The [record index](archive_results_manifest.csv) links the original JSON files and training logs to repository paths and SHA256 identifiers. The [numerical summary](archive_metric_summary.json) retains all 13 configurations in the seed-42 comparison and all three recorded seeds for MorphNet v1, v5, and v9. The [original records](archive/) retain each run's operating threshold and model identity. Archive paths use model names and run identifiers; the index retains the original source paths and actual random seeds.
 
 We keep the main comparison and archived development series separate. The main-series files report integer classification counts and their summaries; the archive reports the additional runs identified in its index. These files provide numerical reporting records rather than a distribution of trained checkpoints or main-series sample-level predictions.
 
