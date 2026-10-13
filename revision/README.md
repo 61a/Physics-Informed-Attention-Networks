@@ -16,7 +16,7 @@ Prepare each `.npy` file as a finite detected-intensity array with axes **channe
 
 Create a CSV manifest with columns `path,label,split`, where label is `0` or `1` and split is `train`, `val`, or `test`. Paths can be relative to the manifest directory or absolute. The manifest fixes the sample assignments for all training seeds and comparison models. Include observing-session identifiers in the optional `group` column to retain each session in one partition; the loader checks file uniqueness and group assignments.
 
-Copy `configs/protocol.json` to create the experiment configuration. Fill `input_shape`, `frequencies_ghz`, `sampling_ms`, and `dm_values` using the prepared arrays and their recorded coordinates. Read channel frequencies from `DAT_FREQ` and the original sampling interval from `TBIN`. Update the time interval and channel centres after averaging. For windows dedispersed at a known reference DM, use a residual-DM grid. Keep the frequency coordinates in the same order as the data channels.
+`configs/protocol.json` is a configuration template for new runs; its defaults do not identify the executed configurations of the published main-table series. Copy it to create the experiment configuration. Fill `input_shape`, `frequencies_ghz`, `sampling_ms`, and `dm_values` using the prepared arrays and their recorded coordinates. Read channel frequencies from `DAT_FREQ` and the original sampling interval from `TBIN`. Update the time interval and channel centres after averaging. For windows dedispersed at a known reference DM, use a residual-DM grid. Keep the frequency coordinates in the same order as the data channels.
 
 Each run uses a common time-frequency grid. Resample files with different native sampling intervals onto that grid and use a common physical window duration before combining them in one experiment. Fix the preparation rule independently of class labels and record the resulting resolution.
 
@@ -38,7 +38,7 @@ For ViT-Small, the input-channel projection follows `C` in the recorded shape. R
 
 ## Experiments
 
-Run from this directory. All model weights are initialized from scratch.
+Run from this directory after preparing the manifest and configuration. All model weights are initialized from scratch. The seed values below illustrate the execution interface; they are not a verified mapping to main-table run identifiers.
 
 ```powershell
 python train.py --manifest data/manifest.csv --config configs/protocol.json --output runs/full --encoder conformer --front-end learned --seeds 42 123 456 789 1024
@@ -74,4 +74,4 @@ The checks cover dispersion units and alignment direction, window-boundary handl
 
 ## Published numerical records
 
-We provide [main comparison summaries and archived experimental records](../experiment_records/20261012/README.md) together with [model-specific parameter counts](../experiment_records/20261012/parameter_counts.csv). Their index identifies each source version and operating threshold. Generated run outputs and the published numerical record series are separate artifacts; use the matching record definitions when interpreting results.
+We provide [main comparison summaries and archived experimental records](../experiment_records/20261012/README.md) together with [model-specific parameter counts](../experiment_records/20261012/parameter_counts.csv). The development-run index identifies the archived source records and operating thresholds. Generated run outputs and the published numerical record series are separate artifacts; use the matching record definitions when interpreting results.

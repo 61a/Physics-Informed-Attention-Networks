@@ -4,7 +4,7 @@ We provide run-level numerical records, model-specific parameter counts, and sou
 
 ## Main comparison
 
-The [count table](main_run_counts.md) reports five runs for each of 13 configurations on a fixed test set of 90 positive and 150 negative examples. [Metric summaries](main_metric_summary.json) give the arithmetic mean and sample standard deviation of the run-level metrics. Precision, recall, and F1 are calculated separately for each run before aggregation.
+The [count table](main_run_counts.md) reports five runs for each of 13 configurations on a fixed test set of 90 positive and 150 negative examples. [Metric summaries](main_metric_summary.json) give the arithmetic mean and sample standard deviation of the run-level metrics. Precision, recall, and F1 are calculated separately for each run before aggregation. Run identifiers 1–5 label these records and are not verified random-seed identifiers. The published counts permit recalculation of the summaries; a per-run mapping to executed configurations, split manifests, checkpoints, and sample-level predictions is not supplied.
 
 ## Additional development runs
 
